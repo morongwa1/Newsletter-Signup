@@ -7,7 +7,7 @@ const https = require("https");
 const app = express();  //initalising the new express app
 
 app.use(express.static("public"));  //a static folder called public
-app.use(bodyParser.urlencoded({extended: true   }));
+app.use(bodyParser.urlencoded({extended: true   }));4
 
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/signup.html");
@@ -63,7 +63,7 @@ app.post("/", function(req, res){   //home route
 
     });
 
-app.listen(3000, function(){     // listening on port 3000m and adding a call back function
+app.listen(process.env.PORT || 3000, function(){     // listening on port 3000 and adding a call back function and the (process.env.PORT) is for heroku server
     console.log("Server running on port 3000.")
 });
 
